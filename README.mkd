@@ -33,12 +33,16 @@ Software is split in two parts:
                                          ***************
 ```
 
+Requirements
+------------
 
 bird-lg depends on :
 
- - python-flask  >= 0.8
+ - python-flask >= 0.8
  - python-dnspython
  - python-pydot
+
+    apt install python-dnspython python-pydot python-flask python-memcache python-twisted
 
 Each services can be embedded in any webserver by following regular python-flask configuration.
 
