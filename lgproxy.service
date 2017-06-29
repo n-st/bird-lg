@@ -1,0 +1,15 @@
+[Unit]
+Description=bird-lg back-end
+Requires=network.target
+After=network.target
+
+[Service]
+Environment=PYTHONPATH=/var/lib/lg/bird-lg/
+
+Type=simple
+ExecStart=/usr/bin/twistd --pidfile /var/run/bird-lgproxy.pid --nodaemon --uid lg --gid bird web --port "tcp:8179:interface=127.0.0.1" --wsgi lgproxy.app
+KillMode=mixed
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
